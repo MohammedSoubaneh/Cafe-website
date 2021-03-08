@@ -1,12 +1,12 @@
 import React from 'react'
-import logo from '../img/oquendo-logo.png'
+
 
 function header() {
     return (
         <div className='navBarOuter'>
             <div className='logoOuter'>
                 <div className='logo'>
-                    <img src={logo}></img>
+                    <img></img>
                 </div>
             </div>
             <div className='navBarOuter'>

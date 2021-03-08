@@ -6,7 +6,6 @@ import HeroPage from './components/HeroPage/heropage'
 function App() {
   return (
     <div className="App">
-     <Header />
      <HeroPage />
     </div>
   );

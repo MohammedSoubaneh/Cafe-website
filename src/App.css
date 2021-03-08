@@ -1,1 +1,6 @@
-/* No CSS *//*# sourceMappingURL=App.css.map */
+.App .slideOne, .App .slideTwo, .App .slideThree {
+  width: 100%;
+  height: 1080px;
+  position: relative;
+}
+/*# sourceMappingURL=App.css.map */
