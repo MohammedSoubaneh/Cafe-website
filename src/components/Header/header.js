@@ -1,21 +1,20 @@
 import React from 'react'
-import logo from '../img/oquendo-logo.png'
+import Logo from '../images/logo.png'
+
 
 function header() {
     return (
         <div className='navBarOuter'>
             <div className='logoOuter'>
                 <div className='logo'>
-                    <img src={logo}></img>
+                    <img src={Logo}></img>
                 </div>
             </div>
             <div className='navBarOuter'>
-                <ul>
-                    <li>WE'RE COFFEE</li>
-                    <li>BUSINESS AREAS</li>
-                    <li>ONLINE STORES</li>
-                    <li>CONTACT</li>
-                </ul>
+                <div className="WeAre">WE ARE COFFEE</div>
+                <div className="Business">BUSINESS AREAS</div>
+                <div className="headerContact">CONTACTS</div>
+                <div className="En">EN</div>
             </div>
         </div>
     )
