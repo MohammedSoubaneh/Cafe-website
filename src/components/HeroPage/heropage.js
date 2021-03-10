@@ -1,36 +1,62 @@
 import React, { useState, useEffect } from 'react'
 import firstImage from '../HeroPage/NEW.jpg'
 import secondImage from '../HeroPage/tasty.png'
-import Carousel from 'react-elastic-carousel'
+import { Carousel } from 'react-bootstrap'
 import productSlide from '../HeroPage/ProductSlide';
 import slideOne from '../images/slide1.jpg'
 import slideTwo from '../images/slide2.jpg'
 import slideThree from '../images/slide3.jpg'
+import Header from '../Header/header'
 
-function HeroPage() {
-    
-    const [productName, setProductName ] = useState([])
-    const [productImage, setProductImage ] = useState({'showImage': firstImage})
-    const [productDescription, setProductDescription ] = useState('')
-    const [cost, setCost] = useState(0)
-
-    useEffect(() => {
-        fetch('/get_product').then(res => res.json()).then(data => {
-            console.log(data)
-            setProductName(data);
-        });
-    }, []);
-
-    const breakPoint = [
-        { width: 400, itemsToShow: 1}
-    ]
+function heropage() {
     return (
-           <Carousel breakPoints={breakPoint}>
-               <productSlide><img src={slideOne} className="slideOne"></img></productSlide>
-               <productSlide><img src={slideTwo} className="slideTwo"></img></productSlide>
-               <productSlide><img src={slideThree} className="slideThree"></img></productSlide>
-           </Carousel>
+        <>
+        <Header />
+        <div className="fullPage">
+        <Carousel>
+        <Carousel.Item interval={60000}>
+            <img
+            className="aBlock"
+            src={slideOne}
+            alt="First slide"
+            />
+            <Carousel.Caption>
+            <div className="title">
+            <h3 className="firstTitle">New Online Store</h3>
+            <h2 className="firstSubTitle">Discover the new online shopping experience</h2>
+            </div>
+            </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item interval={60000}>
+            <img
+            className="bBlock"
+            src={slideTwo}
+            alt="Second slide"
+            />
+            <Carousel.Caption>
+            <div className="title">
+            <h3 className="secondTitle">ENVIORNMENTALLY FRIENDLY</h3>
+            <h2 className="secondSubTitle">Biodegradable, compostable</h2>
+            <h2 className="thirdSubTitle">and sealed capsules </h2>
+            </div>
+            </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+            <img
+            className="cBlock"
+            src={slideThree}
+            alt="Third slide"
+            />
+            <Carousel.Caption>
+            <h3>Third slide label</h3>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </Carousel.Caption>
+        </Carousel.Item>
+        </Carousel>
+        </div>
+        </>
     )
 }
 
-export default HeroPage
+export default heropage
+

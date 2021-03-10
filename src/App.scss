@@ -1,3 +1,4 @@
+
 .App {
     .slideOne, .slideTwo, .slideThree {
         width: 100%;
@@ -6,4 +7,81 @@
         
 
     }
+    .navBarOuter {
+        .logoOuter {
+           display: grid;
+           grid-template-columns: repeat(23, 1fr);
+           .logo {
+               grid-column: 3;
+               position: relative;
+               top: 50px;
+               z-index: 100;
+           }
+        }
+        .navBarOuter {
+            display: grid;
+            grid-template-columns: repeat(23, 1fr);
+            .WeAre {
+                grid-column: 14/16;
+                z-index: 100;
+            }
+            .Business {
+                grid-column: 17/19;
+                z-index: 100;
+            }
+            .headerContact {
+                grid-column: 20/ 22;
+                z-index: 100;
+            }
+            .En {
+                grid-column: 22;
+                z-index: 100;
+            }
+        }
+    }
+    .fullPage {
+        position: relative;
+        bottom: 100px;
+        width: 1920px;
+        height: 1080px;
+        .aBlock {
+            width: 1920px;
+            height: 1080px;
+        }
+        .bBlock {
+            width: 1920px;
+            height: 1080px;
+        }
+        .cBlock {
+            width: 1920px;
+            height: 1080px;
+        }
+        .title {
+            color: black;
+            position: absolute;
+            bottom: 600px;
+            .firstTitle {
+                position: relative;
+                right: 170px;
+                font-size: 40px;
+            }
+            .firstSubTitle {
+                font-size: 32px;
+            }
+            .secondTitle {
+                position: relative;
+                right: 50px;
+                font-size: 40px;
+            }
+            .secondSubTitle {
+                position: relative;
+                right: 120px;
+            }
+            .thirdSubTitle {
+                position: relative;
+                right: 185px;
+            }
+        }
+    }
+
 }
