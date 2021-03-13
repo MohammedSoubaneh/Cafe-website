@@ -1,11 +1,23 @@
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from config import Config
+from flask_migrate import Migrate
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://localhost:5432/flask_todo'
+app.config.from_object(Config)
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
-from models import Product
+class Product(db.Model):
+    
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.Unicode, nullable=False)
+    price = db.Column(db.Integer)
+    image = db.Column(db.Unicode, nullable=False)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
 
 @app.route('/post_product', methods=['POST'])
 def post_product():
@@ -16,8 +28,6 @@ def post_product():
             image = request['image'],
             prod_description = request['description']
       )
-      db.session.add(product)
-      db.commit.session.commit()
 
 
 

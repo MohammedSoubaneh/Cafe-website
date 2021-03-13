@@ -1,4 +1,4 @@
-from .app import db
+from .api import db
 import os
 
 if bool(os.environ.get('DEBUG', '')):
