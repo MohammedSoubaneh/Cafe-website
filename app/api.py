@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request, Blueprint
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
 from flask_migrate import Migrate
@@ -7,6 +7,8 @@ app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+main = Blueprint('main', __name__)
+app.register_blueprint(main)
 
 class Product(db.Model):
     
@@ -19,15 +21,17 @@ class Product(db.Model):
         super().__init__(*args, **kwargs)
 
 
-@app.route('/post_product', methods=['POST'])
+@main.route('/post_product', methods=['POST'])
 def post_product():
 
-      product = Product(
-            name=request['name'],
-            price= request['price'],
-            image = request['image'],
-            prod_description = request['description']
-      )
+      product_data = request.get_json()
+
+      new_product = Product(name=product_data['name'], price=product_data['price'], image=product_data['image'])
+
+      db.session.add(new_product)
+      db.session.commit()
+
+      return 'Done', 201
 
 
 
