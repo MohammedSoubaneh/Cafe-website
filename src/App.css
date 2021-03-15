@@ -4,6 +4,12 @@
   position: relative;
 }
 
+.App .navBarOuter {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: 70px;
+}
+
 .App .navBarOuter .logoOuter {
   display: -ms-grid;
   display: grid;
@@ -91,6 +97,17 @@
   font-size: 32px;
 }
 
+.App .fullPage .title .visitShop {
+  font-size: 16px;
+  color: black;
+  border: 1px solid red;
+  background-color: red;
+  width: 50%;
+  position: relative;
+  top: 20px;
+  padding: 10px;
+}
+
 .App .fullPage .title .secondTitle {
   position: relative;
   right: 50px;
@@ -105,5 +122,286 @@
 .App .fullPage .title .thirdSubTitle {
   position: relative;
   right: 185px;
+}
+
+.App .footerContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[23];
+      grid-template-columns: repeat(23, 1fr);
+  grid-auto-rows: 50px;
+}
+
+.App .footerContainer .sectionOne {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 23;
+  grid-column: 1 / 24;
+  grid-row: span 5;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[23];
+      grid-template-columns: repeat(23, 1fr);
+  background-color: red;
+}
+
+.App .footerContainer .sectionOne .phoneIcon {
+  -ms-grid-column: 6;
+  grid-column: 6;
+  width: 175px;
+  position: relative;
+  bottom: 30px;
+}
+
+.App .footerContainer .sectionOne .specialOffer {
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 4;
+  grid-column: 8 / 12;
+  font-size: 30px;
+  position: relative;
+  top: 50px;
+}
+
+.App .footerContainer .sectionOne .subscribeSection {
+  -ms-grid-column: 15;
+  -ms-grid-column-span: 9;
+  grid-column: 15 / 24;
+  font-size: 24px;
+  position: relative;
+  top: 50px;
+}
+
+.App .footerContainer .sectionTwo {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 23;
+  grid-column: 1 / 24;
+  grid-row: span 10;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[23];
+      grid-template-columns: repeat(23, 1fr);
+  grid-auto-rows: 100px;
+  background-color: black;
+}
+
+.App .footerContainer .sectionTwo .subSectionOne {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 11;
+  grid-column: 1 / 12;
+  grid-row: span 5;
+  color: white;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[23];
+      grid-template-columns: repeat(23, 1fr);
+  grid-auto-rows: 50px;
+}
+
+.App .footerContainer .sectionTwo .subSectionOne .yourExperience {
+  -ms-grid-column: 12;
+  -ms-grid-column-span: 12;
+  grid-column: 12 / 24;
+  grid-row: span 1;
+  font-size: 24px;
+  position: relative;
+  top: 100px;
+  right: 20px;
+}
+
+.App .footerContainer .sectionTwo .subSectionOne .firstList {
+  -ms-grid-column: 11;
+  -ms-grid-column-span: 13;
+  grid-column: 11 / 24;
+  position: relative;
+  top: 100px;
+  line-height: 30px;
+}
+
+.App .footerContainer .sectionTwo .subSectionOne .firstList li {
+  font-size: 13px;
+}
+
+.App .footerContainer .subSectionTwo {
+  -ms-grid-column: 12;
+  -ms-grid-column-span: 12;
+  grid-column: 12 / 24;
+  grid-row: span 5;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[23];
+      grid-template-columns: repeat(23, 1fr);
+  grid-auto-rows: 50px;
+  color: white;
+}
+
+.App .footerContainer .subSectionTwo .followUs {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 23;
+  grid-column: 1 / 24;
+  position: relative;
+  top: 100px;
+  font-size: 24px;
+}
+
+.App .footerContainer .subSectionTwo .socials {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 23;
+  grid-column: 1 / 24;
+  position: relative;
+  top: 125px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[46];
+      grid-template-columns: repeat(46, 1fr);
+}
+
+.App .footerContainer .subSectionTwo .socials .fb {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+}
+
+.App .footerContainer .subSectionTwo .socials .in {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 3;
+  grid-column: 4 / 7;
+}
+
+.App .footerContainer .subSectionTwo .socials .tw {
+  -ms-grid-column: 7;
+  -ms-grid-column-span: 3;
+  grid-column: 7 / 10;
+}
+
+.App .subHeaderContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[23];
+      grid-template-columns: repeat(23, 1fr);
+  grid-auto-rows: 50px;
+}
+
+.App .subHeaderContainer .innerSubHeader {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 23;
+  grid-column: 1 / 24;
+  background-color: red;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[46];
+      grid-template-columns: repeat(46, 1fr);
+  color: white;
+}
+
+.App .subHeaderContainer .innerSubHeader .buttonCoffee {
+  -ms-grid-column: 8;
+  -ms-grid-column-span: 3;
+  grid-column: 8 / 11;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-left: 1px solid #400040;
+  border-right: 1px solid #400040;
+}
+
+.App .subHeaderContainer .innerSubHeader .buttonTeas {
+  -ms-grid-column: 11;
+  -ms-grid-column-span: 7;
+  grid-column: 11 / 18;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-right: 1px solid #400040;
+}
+
+.App .subHeaderContainer .innerSubHeader .buttonBioProducts {
+  -ms-grid-column: 18;
+  -ms-grid-column-span: 4;
+  grid-column: 18 / 22;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-right: 1px solid #400040;
+}
+
+.App .subHeaderContainer .innerSubHeader .buttonAccessories {
+  -ms-grid-column: 22;
+  -ms-grid-column-span: 3;
+  grid-column: 22 / 25;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-right: 1px solid #400040;
+}
+
+.App .subHeaderContainer .innerSubHeader .buttonChocolate {
+  -ms-grid-column: 25;
+  -ms-grid-column-span: 3;
+  grid-column: 25 / 28;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-right: 1px solid #400040;
+}
+
+.App .subHeaderContainer .innerSubHeader .buttonGiftPack {
+  -ms-grid-column: 28;
+  -ms-grid-column-span: 3;
+  grid-column: 28 / 31;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .subHeaderContainer .innerSubHeader .whiteSpace {
+  -ms-grid-column: 31;
+  -ms-grid-column-span: 7;
+  grid-column: 31 / 38;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-left: 1px solid #400040;
+  border-right: 1px solid #400040;
 }
 /*# sourceMappingURL=App.css.map */

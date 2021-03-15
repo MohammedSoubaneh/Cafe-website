@@ -7,14 +7,15 @@ import slideOne from '../images/slide1.jpg'
 import slideTwo from '../images/slide2.jpg'
 import slideThree from '../images/slide3.jpg'
 import Header from '../Header/header'
-
+import { Link } from 'react-router-dom'
+ 
 function heropage() {
     return (
         <>
         <Header />
         <div className="fullPage">
         <Carousel>
-        <Carousel.Item interval={60000}>
+        <Carousel.Item interval={600000}>
             <img
             className="aBlock"
             src={slideOne}
@@ -24,6 +25,7 @@ function heropage() {
             <div className="title">
             <h3 className="firstTitle">New Online Store</h3>
             <h2 className="firstSubTitle">Discover the new online shopping experience</h2>
+            <div className="visitShop"><Link to="onlineStore" style={{ textDecoration: 'none', color: 'black'}}activeClassName="active-logo">VISIT OUR SHOP</Link></div>
             </div>
             </Carousel.Caption>
         </Carousel.Item>

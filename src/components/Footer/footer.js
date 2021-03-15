@@ -33,7 +33,7 @@ function footer() {
                     <div className="subSectionTwo">
                         <div className="followUs"> Follow Us</div>
                         <div className="socials">
-                            <div className="fb"><img src={faceBookLogo} /> </div>
+                            <img className="fb" src={faceBookLogo} /> 
                             <img className="in" src={instagramLogo} />
                             <img className="tw" src={twitterLogo} />
                             <img className="yt" src={youtubeLogo} />

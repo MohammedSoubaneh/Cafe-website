@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from '../images/logo.png'
+import { Link  } from 'react-router-dom'
 
 
 function header() {
@@ -7,7 +8,7 @@ function header() {
         <div className='navBarOuter'>
             <div className='logoOuter'>
                 <div className='logo'>
-                    <img src={Logo}></img>
+                    <Link to="/" style={{ textDecoration: 'none', color: 'black'}}><img src={Logo}></img></Link>
                 </div>
             </div>
             <div className='navBarOuter'>

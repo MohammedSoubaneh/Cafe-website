@@ -8,7 +8,6 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 main = Blueprint('main', __name__)
-app.register_blueprint(main)
 
 class Product(db.Model):
     
@@ -34,9 +33,22 @@ def post_product():
       return 'Done', 201
 
 
+@main.route('/products')
+def products():
+
+    product_list = Product.query.all()
+
+    products = []
+
+    for product in product_list:
+
+        products.append({'name': product.name, 'price': product.price, 'image': product.image })
+
+    return jsonify({'products' : products})
 
 #     product = [{'nameproduct': 'coffee 1', 'product_image': 1, 'product_description': 'tasty coffe 1'},
 #           {'productname': 'coffee 2', 'product_image': 2, 'product_description': 'tasty coffe 2'},
 #           {'productname': 'coffee 3', 'product_image': 3, 'product_description': 'tasty coffe 3'}]
 #     return jsonify(people) 
-    
+
+app.register_blueprint(main)
