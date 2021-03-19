@@ -59,6 +59,115 @@
   z-index: 100;
 }
 
+.App .navBarOuter .dropDown {
+  height: 300px;
+  width: 200px;
+  background-color: black;
+}
+
+.App .navBarOuter .outerContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[23];
+      grid-template-columns: repeat(23, 1fr);
+  height: 300px;
+  z-index: 200;
+  background-color: black;
+  color: white;
+}
+
+.App .navBarOuter .outerContainer .InnerContainer {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 20;
+  grid-column: 3 / 23;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: lightblue;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .navBarOuter .outerContainer .InnerContainer .quality {
+  background-color: lightcoral;
+  height: 250px;
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .navBarOuter .outerContainer .InnerContainer .history {
+  background-color: lightcoral;
+  height: 250px;
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .navBarOuter .outerContainer .InnerContainer .brand {
+  background-color: lightcoral;
+  height: 250px;
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .navBarOuter .outerContainer .InnerContainer .discover {
+  background-color: lightcoral;
+  height: 250px;
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .navBarOuter .outerContainer .InnerContainer .team {
+  background-color: lightcoral;
+  height: 250px;
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .App .fullPage {
   position: relative;
   bottom: 100px;
@@ -403,5 +512,137 @@
           justify-content: center;
   border-left: 1px solid #400040;
   border-right: 1px solid #400040;
+}
+
+.App .onlinePage .aBlock {
+  width: 100%;
+  height: 800px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+  -o-object-position: right;
+     object-position: right;
+}
+
+.App .onlinePage .bBlock {
+  width: 100%;
+  height: 800px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+  -o-object-position: right;
+     object-position: right;
+}
+
+.App .onlinePage .cBlock {
+  width: 100%;
+  height: 800px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+  -o-object-position: right;
+     object-position: right;
+}
+
+.App .onlinePage .title {
+  color: black;
+  position: absolute;
+  bottom: 400px;
+}
+
+.App .onlinePage .title .firstTitle {
+  position: relative;
+  right: 170px;
+  font-size: 40px;
+}
+
+.App .onlinePage .title .firstSubTitle {
+  font-size: 32px;
+}
+
+.App .onlinePage .title .visitShop {
+  font-size: 16px;
+  color: black;
+  border: 1px solid red;
+  background-color: red;
+  width: 50%;
+  position: relative;
+  top: 20px;
+  padding: 10px;
+}
+
+.App .onlinePage .title .secondTitle {
+  position: relative;
+  right: 50px;
+  font-size: 40px;
+}
+
+.App .onlinePage .title .secondSubTitle {
+  position: relative;
+  right: 120px;
+}
+
+.App .onlinePage .title .thirdSubTitle {
+  position: relative;
+  right: 185px;
+}
+
+.App .onlinePage .blackSpace {
+  height: 100px;
+  background-color: black;
+}
+
+.App .categorySearch {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[23];
+      grid-template-columns: repeat(23, 1fr);
+}
+
+.App .categorySearch .innerCategorySearch {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 16;
+  grid-column: 4 / 20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  height: 0;
+  padding-top: 50px;
+}
+
+.App .categorySearch .innerCategorySearch .outerContainer .innerContainer {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 16;
+  grid-column: 4 / 20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 20px;
+}
+
+.App .categorySearch .innerCategorySearch .outerContainer .innerContainer .image {
+  height: 300px;
+  width: 400px;
+  background-color: lightblue;
+}
+
+.App .categorySearch .innerCategorySearch .outerContainer .innerContainer .nameContainer {
+  background-color: black;
+  height: 75px;
+  color: white;
 }
 /*# sourceMappingURL=App.css.map */

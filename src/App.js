@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Home from './components/HomePage/HomePage'
 import subHeader from './components/subHeader/subHeader'
 import onlineStore from './components/OnlineStorePage/onlineStore'
+import ProductsPage from './components/OnlineStorePage/products'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Switch>
         <Route path="/" exact={true} component={Home} />
         <Route path="/onlineStore" exact={true} component={onlineStore} />
+        <Route path="/products" exact={true} component={ProductsPage} />
       </Switch>
     </div>
     </Router>
