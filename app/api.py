@@ -48,13 +48,4 @@ def products():
 
     return jsonify({'products' : products})
 
-
-@main.route('/choose_category')
-def choose_category():
-    choose_category = [{'name': 'COFFEE BEANS', 'image': 'not now'},{'name': 'GROUND COFFEE', 'image': 'not now'},{'name': 'COFFEE CAPSULES COMPATIBLE NESPRESSO MACHINE', 'image': 'not now'}
-    ,{'name': 'COFFEE CAPSULE COMPATIBLE WITH DOLCE GUSTO SYSTEM', 'image': 'not now'},{'name': 'TEAS AND INFUSION', 'image': 'not now'},{'name': 'CHOCOLATES', 'image': 'not now'},
-    {'name': 'BIO PRODUCTS', 'image': 'not now'},{'name': 'ACCESSOIRES', 'image': 'not now'}]
-
-    return jsonify({'choose_category': choose_category})
-
 app.register_blueprint(main)
