@@ -7,6 +7,7 @@ function Header() {
 
     const [isShown, setIsShown ] = useState(false);
 
+    
 
     return (
         <div className='navBarOuter'>
@@ -18,16 +19,17 @@ function Header() {
             <div className='navBarOuter'>
                 <div className="WeAre"
                 onMouseEnter={() => setIsShown(true)}
-                onMouseLeave={() => setIsShown(false)}
                 >WE ARE COFFEE</div>
                 <div className="Business">BUSINESS AREAS</div>
                 <div className="headerContact">CONTACTS</div>
                 <div className="En">EN</div>
             </div>
             {isShown && (
-                    <div className="outerContainer">
+                    <div onMouseLeave={() => setIsShown(false)} className="outerContainer">
                         <div className="InnerContainer">
-                            <div className="quality">Quality from Origin</div>
+                            <div className="quality">
+                                <p>Quality from Origin</p>
+                            </div>
                             <div className="history">Our History</div>
                             <div className="brand">Our Brand</div>
                             <div className="discover">Discover Our Blend </div>

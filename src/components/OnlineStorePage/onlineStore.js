@@ -3,6 +3,7 @@ import SubHeader from '../subHeader/subHeader'
 import Header from '../Header/header'
 import CarouselView from '../CarouselProdcut/CarouselView'
 import CategorySearch from '../OnlineStorePage/poductSearch'
+import Footer from '../Footer/footer'
 
 function onlineStore() {
     return (
@@ -11,6 +12,7 @@ function onlineStore() {
             <SubHeader />
             <CarouselView />
             <CategorySearch />
+            <Footer />
         </div>
     )
 }
