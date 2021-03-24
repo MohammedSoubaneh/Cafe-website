@@ -1,7 +1,10 @@
-from flask import Flask, jsonify, request, Blueprint
+from flask import Flask, jsonify, request, Blueprint, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
 from flask_migrate import Migrate
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms.validators import DataRequired
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -20,6 +23,7 @@ class Products(db.Model):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
         
 
 
