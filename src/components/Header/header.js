@@ -1,23 +1,44 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Logo from '../images/logo.png'
+import { Link  } from 'react-router-dom'
 
 
-function header() {
+function Header() {
+
+    const [isShown, setIsShown ] = useState(false);
+
+    
+
     return (
         <div className='navBarOuter'>
             <div className='logoOuter'>
                 <div className='logo'>
-                    <img src={Logo}></img>
+                    <Link to="/" style={{ textDecoration: 'none', color: 'black'}}><img src={Logo}></img></Link>
                 </div>
             </div>
             <div className='navBarOuter'>
-                <div className="WeAre">WE ARE COFFEE</div>
+                <div className="WeAre"
+                onMouseEnter={() => setIsShown(true)}
+                >WE ARE COFFEE</div>
                 <div className="Business">BUSINESS AREAS</div>
                 <div className="headerContact">CONTACTS</div>
                 <div className="En">EN</div>
             </div>
+            {isShown && (
+                    <div onMouseLeave={() => setIsShown(false)} className="outerContainer">
+                        <div className="InnerContainer">
+                            <div className="quality">
+                                <p>Quality from Origin</p>
+                            </div>
+                            <div className="history">Our History</div>
+                            <div className="brand">Our Brand</div>
+                            <div className="discover">Discover Our Blend </div>
+                            <div className="team">Team</div>
+                        </div>
+                    </div>
+                )}
         </div>
     )
 }
 
-export default header
+export default Header

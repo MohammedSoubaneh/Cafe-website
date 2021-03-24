@@ -8,6 +8,10 @@
 
     }
     .navBarOuter {
+        display: grid;
+        grid-auto-rows: 70px;
+        position: sticky;
+        z-index: 100;
         .logoOuter {
            display: grid;
            grid-template-columns: repeat(23, 1fr);
@@ -36,6 +40,83 @@
             .En {
                 grid-column: 22;
                 z-index: 100;
+            }
+        }
+        .dropDown{
+            height: 300px;
+            width: 200px;
+            background-color: black;
+
+        }
+        .outerContainer{
+            display: grid;
+            grid-template-columns: repeat(23, 1fr);
+            height: 300px;
+            z-index: 200;
+            background-color: black;
+            color: white;
+            .InnerContainer{
+                grid-column: 3 / 23;
+                display: flex;
+                justify-content: space-evenly;
+                background-color: lightblue;
+                justify-items: center;
+                align-items: center;
+                .quality{
+                    background-color: lightcoral;
+                    height: 250px;
+                    width: 250px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-image: url('../src/components/images/headerBean.jpg');
+                    background-repeat: none;
+                    background-size: cover;
+                }
+                .history {
+                    background-color: lightcoral;
+                    height: 250px;
+                    width: 250px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-image: url('../src/components/images/threeCoffee.jpg');
+                    background-repeat: none;
+                    background-size: cover;
+                }
+                .brand {
+                    background-color: lightcoral;
+                    height: 250px;
+                    width: 250px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-image: url('../src/components/images/coffedrip.jpg');
+                    background-repeat: none;
+                    background-size: cover;
+                }
+                .discover {
+                    background-color: lightcoral;
+                    height: 250px;
+                    width: 250px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-image: url('../src/components/images/history.jpg');
+                    background-repeat: none;
+                    background-size: cover;
+                }
+                .team {
+                    background-color: lightcoral;
+                    height: 250px;
+                    width: 250px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-image: url('../src/components/images/headerBean.jpg');
+                    background-repeat: none;
+                    background-size: cover;
+                }
             }
         }
     }
@@ -68,6 +149,16 @@
             .firstSubTitle {
                 font-size: 32px;
             }
+            .visitShop {
+                font-size: 16px;
+                color: black;
+                border: 1px solid red;
+                background-color: red;
+                width: 50%;
+                position: relative;
+                top: 20px;
+                padding: 10px;
+            }
             .secondTitle {
                 position: relative;
                 right: 50px;
@@ -83,5 +174,318 @@
             }
         }
     }
+    .footerContainer {
+        display: grid;
+        grid-template-columns: repeat(23, 1fr);
+        grid-auto-rows: 50px;
+        .sectionOne {
+            grid-column: 1 / 24;
+            grid-row: span 5;
+            display: grid;
+            grid-template-columns: repeat(23, 1fr);
+            background-color: red;
+            .phoneIcon {
+                grid-column: 6;
+                width: 175px;
+                position: relative;
+                bottom: 30px;
+            }
+            .specialOffer {
+                grid-column: 8 / 12;
+                font-size: 30px;
+                position: relative;
+                top: 50px;
+            }
+            .subscribeSection{
+                grid-column: 15 / 24;
+                font-size: 24px;
+                position: relative;
+                top: 50px;
+            }
+        }
+        .sectionTwo {
+            grid-column: 1 / 24;
+            grid-row: span 10;
+            display: grid;
+            grid-template-columns: repeat(23, 1fr);
+            grid-auto-rows: 100px;
+            background-color: black;
+            .subSectionOne {
+                grid-column: 1 / 12;
+                grid-row: span 5;
+                color: white;
+                display: grid;
+                grid-template-columns: repeat(23, 1fr);
+                grid-auto-rows: 50px;
+                .yourExperience {
+                    grid-column: 12 / 24;
+                    grid-row: span 1;
+                    font-size: 24px;
+                    position: relative;
+                    top: 100px;
+                    right: 20px;
+                }
+                .firstList{
+                    grid-column: 11 / 24;
+                    position: relative;
+                    top: 100px;
+                    line-height: 30px;
+                    li {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+        .subSectionTwo{
+            grid-column: 12 / 24;
+            grid-row: span 5;
+            display: grid;
+            grid-template-columns: repeat(23, 1fr);
+            grid-auto-rows: 50px;
+            color: white;
+            .followUs {
+                grid-column: 1 / 24;
+                position: relative;
+                top: 100px;
+                font-size: 24px;
+            }
+            .socials {
+                grid-column: 1 / 24;
+                position: relative;
+                top: 125px;
+                display: grid;
+                grid-template-columns: repeat(46, 1fr);
+                .fb {
+                    grid-column: 1 / 4;
+                }
+                .in {
+                    grid-column: 4 / 7;
+                }
+                .tw {
+                    grid-column: 7 / 10;
+                }
+            }
+        }
+    }
+    .subHeaderContainer {
+        display: grid;
+        grid-template-columns: repeat(23, 1fr);
+        grid-auto-rows: 50px;
+        .innerSubHeader {
+            grid-column: 1 / 24;
+            background-color: red;
+            display: grid;
+            grid-template-columns: repeat(46, 1fr);
+            color: white;
+            .buttonCoffee {
+                grid-column: 8 / 11;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-left: 1px solid #400040;
+                border-right: 1px solid #400040;
+            }
+            .buttonTeas {
+                grid-column: 11 / 18;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-right: 1px solid #400040;
+                
+            }
+            .buttonBioProducts {
+                grid-column: 18 / 22;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-right: 1px solid #400040;
+            }
+            .buttonAccessories {
+                grid-column: 22 / 25;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-right: 1px solid #400040;
+            }
+            .buttonChocolate {
+                grid-column: 25 / 28;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-right: 1px solid #400040;
+            }
+            .buttonGiftPack {
+                grid-column: 28 / 31;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .whiteSpace {
+                grid-column: 31 / 38;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-left: 1px solid #400040;
+                border-right: 1px solid #400040;
+            }
 
+        }
+    }
+    .onlinePage {
+
+        .aBlock{
+            width:100%;
+            height:800px;
+            object-fit:cover;
+            object-position:50% 50%;
+            object-position: right;
+        }
+        .bBlock {
+            width:100%;
+            height:800px;
+            object-fit:cover;
+            object-position:50% 50%;
+            object-position: right;
+        }
+        .cBlock {
+            width:100%;
+            height:800px;
+            object-fit:cover;
+            object-position:50% 50%;
+            object-position: right;
+        }
+        .title {
+            color: black;
+            position: absolute;
+            bottom: 400px;
+            .firstTitle {
+                position: relative;
+                right: 170px;
+                font-size: 40px;
+            }
+            .firstSubTitle {
+                font-size: 32px;
+            }
+            .visitShop {
+                font-size: 16px;
+                color: black;
+                border: 1px solid red;
+                background-color: red;
+                width: 50%;
+                position: relative;
+                top: 20px;
+                padding: 10px;
+            }
+            .secondTitle {
+                position: relative;
+                right: 50px;
+                font-size: 40px;
+            }
+            .secondSubTitle {
+                position: relative;
+                right: 120px;
+            }
+            .thirdSubTitle {
+                position: relative;
+                right: 185px;
+            }
+        }
+        .blackSpace {
+            height: 100px;
+            background-color: black;
+        }
+    }
+    .categorySearch {
+        display: grid;
+        grid-template-columns: repeat(23, 1fr);
+        grid-auto-rows: 100px;
+        .innerCategorySearch{
+            grid-column: 4 / 20;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            flex-basis: 100%;
+            height: 0;
+            padding-top: 50px;
+            grid-row: span 9;
+            .productCategory{
+                padding-bottom: 30px;
+                .productImage {
+                        width: 400px;
+                        height: 300px;
+                        object-fit: cover;
+                }
+                .productText {
+                        height: 75px;
+                        background-color: black;
+                        color: white;
+                        font-size: 20px;
+                        padding-left: 30px;
+                        padding-top: 10px;
+                }
+            }
+        }
+        .carouselProduct {
+            grid-column: 4 / 20;
+            background-color: lightblue;
+            grid-row: span 5;
+            .productSlider{
+                background-color: lightgreen;
+                margin: 10px;
+                .productImage{
+                    width: 300px;
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .productName, .productDescription {
+                    text-align: center;
+                }
+                .productName {
+                    font-size: 22px;
+                }
+                .productDescription {
+                    font-size: 16px;
+                }
+                .priceWeight {
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+            }
+        }
+        .outerContainerShipping{
+            margin-top: 100px;
+            grid-column: 4 / 20;
+            grid-row: span 5;
+            background-color: lightgrey;
+            margin-bottom: 100px;
+            .innerContainer {
+                display: flex;
+                justify-content: space-evenly;
+                align-content: center;
+                align-items: center;
+                .freeShipping, .shippingTime, .freeShipping {
+                    text-align: center;
+                    margin-top: 50px;
+                    .shippingImage {
+                        width: 75px;
+                        height: 75px;
+                        margin-bottom: 50px;
+                    }
+                }
+            }
+        }
+        .topSale{
+            grid-column: 4 / 20;
+            text-align: center;
+            margin: 50px;
+            .redLine {
+                background-color: red;
+                height: 2px;
+                width: 40px;
+                position: relative;
+                left: 590px;
+            }
+        }
+    }
 }
