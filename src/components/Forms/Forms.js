@@ -3,15 +3,6 @@ import { Button, Checkbox, Form } from 'semantic-ui-react'
 
 function Forms() {
 
-    const [forms, setForms] = useState('');
-
-    useEffect(() => {
-        fetch('/login').then(response =>
-            response.json().then(data => {
-                setForms(data.form);
-            })
-        );
-    }, []);
 
 
     return (
