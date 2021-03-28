@@ -2,20 +2,21 @@ from flask import Flask, jsonify, request, Blueprint, flash, redirect, make_resp
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
 from flask_migrate import Migrate
-from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import DataRequired
 import datetime 
 import jwt
 from flask.views import MethodView
-import bcrypt
+from flask_bcrypt import Bcrypt
+from flask_cors import CORS
 import time
+import json
 
 
 app = Flask(__name__)
 app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+bcrypt = Bcrypt(app)
+CORS(app)
 main = Blueprint('main', __name__)
 
 
@@ -52,7 +53,7 @@ class User(db.Model):
 
         try:
             payload = {
-                'exp': datetime.datetime.utcnow() + datetime.timedelta(days=0, seconds=5),
+                'exp': datetime.datetime.utcnow() + datetime.timedelta(days=0, seconds=100),
                 'iat': datetime.datetime.utcnow(),
                 'sub': user_id
             }
@@ -109,7 +110,6 @@ class RegisterAPI(MethodView):
     def post(self):
 
         post_data = request.get_json()
-
         user = User.query.filter_by(email=post_data.get('email')).first()
         if not user:
             try:
@@ -117,11 +117,8 @@ class RegisterAPI(MethodView):
                     email=post_data.get('email'),
                     password=post_data.get('password')
                 )
-
-
                 db.session.add(user)
                 db.session.commit()
-
                 auth_token = user.encode_auth_token(user.id)
                 responseObject = {
                     'status': 'success',
@@ -142,6 +139,8 @@ class RegisterAPI(MethodView):
             }
             return make_response(jsonify(responseObject)), 202
 
+# "email": "mohamme@example.com",
+# "password": "Strongpasswor"
 
 class LoginAPI(MethodView):
 
@@ -182,7 +181,7 @@ class LoginAPI(MethodView):
 class UserAPI(MethodView):
 
     def get(self):
-        # get the auth token
+
         auth_header = request.headers.get('Authorization')
         if auth_header:
             try:
@@ -294,7 +293,7 @@ def products():
 
 
 
-app.register_blueprint(main)
+
 registration_view = RegisterAPI.as_view('register_api')
 login_view = LoginAPI.as_view('login_api')
 user_view = UserAPI.as_view('user_api')
@@ -321,3 +320,5 @@ main.add_url_rule(
     view_func=logout_view,
     methods=['POST']
 )
+
+app.register_blueprint(main)
