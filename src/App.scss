@@ -12,6 +12,7 @@
         grid-auto-rows: 70px;
         position: sticky;
         z-index: 100;
+        background-color: black;
         .logoOuter {
            display: grid;
            grid-template-columns: repeat(23, 1fr);
@@ -19,12 +20,13 @@
                grid-column: 3;
                position: relative;
                top: 50px;
-               z-index: 100;
+               z-index: 300;
            }
         }
         .navBarOuter {
             display: grid;
             grid-template-columns: repeat(23, 1fr);
+            color: white;
             .WeAre {
                 grid-column: 14/16;
                 z-index: 100;
@@ -59,7 +61,6 @@
                 grid-column: 3 / 23;
                 display: flex;
                 justify-content: space-evenly;
-                background-color: lightblue;
                 justify-items: center;
                 align-items: center;
                 .quality{
@@ -487,5 +488,60 @@
                 left: 590px;
             }
         }
+    }
+    .outterContainer {
+      display: grid;
+      grid-template-columns: repeat(23, 1fr);
+
+      .backgroundImage {
+          grid-column: 1 / 24;
+        img {
+            text-align: center;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+      }
+      .greenTree {
+          grid-column: 1 / 24;
+
+          img {
+            text-align: center;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+      }
+      .branch {
+          grid-column: 1 / 24;
+      }
+      .berryImage {
+          grid-column: 1 / 24;
+          display: grid;
+          grid-template-columns: repeat(23, 1fr);
+
+          .space {
+              grid-column: 1 / 24;
+          }
+          .branchLeft{
+              grid-column: 1;
+              position: relative;
+              bottom: 80px;
+          }
+          .branchCenter {
+              grid-column: 9 / 15;
+              display: flex;
+              align-items: center;
+              position: relative;
+              bottom: 90px;
+          }
+          .branchRight {
+              grid-column: 24;
+              position: relative;
+              bottom: 80px;
+          }
+      }
     }
 }

@@ -43,7 +43,7 @@ function Forms() {
         fetch('/auth/login', {
             method: 'post',
             headers: {
-                'Authorization': `Basic `,
+                'Authorization':  'Bearer',
                 'Content-Type': 'application/json'
                 },
         }).then(r => r.json())

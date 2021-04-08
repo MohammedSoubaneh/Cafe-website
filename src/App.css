@@ -11,6 +11,7 @@
   position: -webkit-sticky;
   position: sticky;
   z-index: 100;
+  background-color: black;
 }
 
 .App .navBarOuter .logoOuter {
@@ -25,7 +26,7 @@
   grid-column: 3;
   position: relative;
   top: 50px;
-  z-index: 100;
+  z-index: 300;
 }
 
 .App .navBarOuter .navBarOuter {
@@ -33,6 +34,7 @@
   display: grid;
   -ms-grid-columns: (1fr)[23];
       grid-template-columns: repeat(23, 1fr);
+  color: white;
 }
 
 .App .navBarOuter .navBarOuter .WeAre {
@@ -89,7 +91,6 @@
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  background-color: lightblue;
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -750,5 +751,98 @@
   width: 40px;
   position: relative;
   left: 590px;
+}
+
+.App .outterContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[23];
+      grid-template-columns: repeat(23, 1fr);
+}
+
+.App .outterContainer .backgroundImage {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 23;
+  grid-column: 1 / 24;
+}
+
+.App .outterContainer .backgroundImage img {
+  text-align: center;
+  display: block;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+
+.App .outterContainer .greenTree {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 23;
+  grid-column: 1 / 24;
+}
+
+.App .outterContainer .greenTree img {
+  text-align: center;
+  display: block;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+}
+
+.App .outterContainer .branch {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 23;
+  grid-column: 1 / 24;
+}
+
+.App .outterContainer .berryImage {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 23;
+  grid-column: 1 / 24;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[23];
+      grid-template-columns: repeat(23, 1fr);
+}
+
+.App .outterContainer .berryImage .space {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 23;
+  grid-column: 1 / 24;
+}
+
+.App .outterContainer .berryImage .branchLeft {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  position: relative;
+  bottom: 80px;
+}
+
+.App .outterContainer .berryImage .branchCenter {
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 6;
+  grid-column: 9 / 15;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  bottom: 90px;
+}
+
+.App .outterContainer .berryImage .branchRight {
+  -ms-grid-column: 24;
+  grid-column: 24;
+  position: relative;
+  bottom: 80px;
 }
 /*# sourceMappingURL=App.css.map */
