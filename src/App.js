@@ -10,7 +10,6 @@ import onlineStore from './components/OnlineStorePage/onlineStore'
 import ProductsPage from './components/OnlineStorePage/products'
 import FormLogin, {PrivateRoute} from './components/Forms/Forms'
 import RegisterUser from './components/Forms/Register'
-import LoggedIn from './components/Forms/LoggedIn'
 
 
 
@@ -25,7 +24,6 @@ function App() {
         <Route path="/products" exact={true} component={ProductsPage} />
         <Route path="/login" exact={true} component={FormLogin} />
         <Route path="/register" exact={true} component={RegisterUser} />
-        <Route path="/loggedin" exact={true} component={LoggedIn} />
       </Switch>
     </div>
     </Router>

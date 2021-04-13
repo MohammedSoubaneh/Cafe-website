@@ -1,7 +1,6 @@
 import React, { useState, useEffect} from 'react'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Checkbox, Form, Header } from 'semantic-ui-react'
 import Register from './Register'
-import {login, useAuth, logout, authFetch} from './initial'
 
 
 
@@ -29,28 +28,8 @@ function Forms() {
         }).then(r => r.json())
         .then(token => {
             if (token.auth_token){
-                login(token)
-                console.log(token)
-            }
-            else {
-                console.log("Please type in the correct Email or Password")
-            }
-        })
-    }
-
-    const onLogoutClick = (e) => {
-
-        fetch('/auth/login', {
-            method: 'post',
-            headers: {
-                'Authorization':  'Bearer',
-                'Content-Type': 'application/json'
-                },
-        }).then(r => r.json())
-        .then(token => {
-            if (token.auth_token){
-                login(token)
-                console.log(token)
+                localStorage.setItem('accessToken', JSON.stringify(token.auth_token));
+                console.log(token.auth_token)
             }
             else {
                 console.log("Please type in the correct Email or Password")
@@ -66,12 +45,10 @@ function Forms() {
         SetPassword(e.target.value)
     }
 
-    const [logged] = useAuth();
 
     return (
         <div>
             <h1>Login</h1>
-            {!logged?
             <Form  action='' method='post'>
                 <Form.Field>
                 <label>First Name</label>
@@ -86,8 +63,6 @@ function Forms() {
                 </Form.Field>
             <Button type='submit' onClick={onSubmitClick}>Submit</Button>
             </Form>
-            : <button onClick={onLogoutClick}>logout</button>
-            }
         </div>
     )
 }
