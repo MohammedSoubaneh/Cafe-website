@@ -10,6 +10,9 @@ import onlineStore from './components/OnlineStorePage/onlineStore'
 import ProductsPage from './components/OnlineStorePage/products'
 import FormLogin, {PrivateRoute} from './components/Forms/Forms'
 import RegisterUser from './components/Forms/Register'
+import LoginForm from './components/login.component'
+import RegisterForm from './components/register.component';
+import Profile from './components/profile.component';
 
 
 
@@ -24,6 +27,9 @@ function App() {
         <Route path="/products" exact={true} component={ProductsPage} />
         <Route path="/login" exact={true} component={FormLogin} />
         <Route path="/register" exact={true} component={RegisterUser} />
+        <Route path="/logintest" exact={true} component={LoginForm} />
+        <Route path="/registertest" exact={true} component={RegisterForm} />
+        <Route path="/profile" exact={true} component={Profile} />
       </Switch>
     </div>
     </Router>

@@ -2,15 +2,15 @@ import axios from 'axios';
 
 class AuthService {
 
-    async login(email, password) {
-        const response = await axios.post('/auth/login', {
-            email: email,
-            password: password
+    login(email, password) {
+        return axios
+          .post('/auth/login', { email, password })
+          .then((response) => {
+            if (response.data.auth_token) {
+                localStorage.setItem('user', JSON.stringify(response.data.auth_token));
+            }
+            return response.data;
         });
-        if (response.data.accessToken) {
-            localStorage.setItem('user', JSON.stringify(response.data));
-        }
-        return response.data;
     }
 
     logout() {
