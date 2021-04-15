@@ -13,6 +13,7 @@ import RegisterUser from './components/Forms/Register'
 import LoginForm from './components/login.component'
 import RegisterForm from './components/register.component';
 import Profile from './components/profile.component';
+import Admin from './user';
 
 
 

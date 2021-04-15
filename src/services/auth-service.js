@@ -1,4 +1,5 @@
 import axios from 'axios';
+import authHeader from './auth-header';
 
 class AuthService {
 
@@ -6,15 +7,21 @@ class AuthService {
         return axios
           .post('/auth/login', { email, password })
           .then((response) => {
-            if (response.data.auth_token) {
-                localStorage.setItem('user', JSON.stringify(response.data.auth_token));
+            if (response.data) {
+                localStorage.setItem('user', JSON.stringify(response.data));
             }
             return response.data;
         });
     }
 
+
     logout() {
-        localStorage.removeItem('user');
+        return axios
+            .post('/auth/logout', { headers: authHeader() })
+            .then((response) => {
+                localStorage.removeItem('user')
+                console.log(response)
+            });
     }
 
     register(email, password) {
