@@ -3,10 +3,11 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { clearMessage } from '../actions/message';
 import { history } from '../helpers/history';
-import { logout, userStatus } from '../actions/auth';
+import { userStatus } from '../actions/auth';
 import axios from 'axios';
 import authHeader from '../services/auth-header';
 import UserService from '../services/user.service';
+
 
 
 class Profile extends Component {
@@ -48,7 +49,7 @@ class Profile extends Component {
 
 
     logOut() {
-        this.props.dispatch(logout());
+      UserService.logOut();
       }
 
 

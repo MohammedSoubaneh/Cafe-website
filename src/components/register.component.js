@@ -98,23 +98,16 @@ class Register extends Component {
     const { message } = this.props;
 
     return (
-      <div className="col-md-12">
-        <div className="card card-container">
-          <img
-            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-            alt="profile-img"
-            className="profile-img-card"
-          />
-
           <Form
+            className='outerContainer'
             onSubmit={this.handleRegister}
             ref={(c) => {
               this.form = c;
             }}
           >
             {!this.state.successful && (
-              <div>
-
+              <div className='innerContainer'>
+                <h1>Register</h1>
                 <div className="form-group">
                   <label htmlFor="email">Email</label>
                   <Input
@@ -140,7 +133,7 @@ class Register extends Component {
                 </div>
 
                 <div className="form-group">
-                  <button className="btn btn-primary btn-block">Sign Up</button>
+                  <div onClick={this.handleRegister} className="button">Sign Up</div>
                 </div>
               </div>
             )}
@@ -156,11 +149,9 @@ class Register extends Component {
               style={{ display: "none" }}
               ref={(c) => {
                 this.checkBtn = c;
-              }}
-            />
-          </Form>
-        </div>
-      </div>
+            }}
+          />
+      </Form>
     );
   }
 }

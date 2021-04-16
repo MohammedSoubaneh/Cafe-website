@@ -845,4 +845,71 @@
   position: relative;
   bottom: 80px;
 }
+
+.App .outerContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[23];
+      grid-template-columns: repeat(23, 1fr);
+  grid-auto-rows: 100px;
+}
+
+.App .outerContainer .innerContainer {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 23;
+  grid-column: 1 / 24;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-row: span 5;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.App .outerContainer .innerContainer .form-group {
+  width: 500px;
+}
+
+.App .outerContainer .innerContainer .form-group .form-control {
+  width: 100%;
+  height: 30px;
+}
+
+.App .outerContainer .innerContainer .form-group .button {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  margin: 5px;
+  font-size: 20px;
+}
+
+.App .formContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[23];
+      grid-template-columns: repeat(23, 1fr);
+  grid-auto-rows: 100px;
+}
+
+.App .formContainer .login {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 11;
+  grid-column: 1 / 12;
+  grid-row: span 5;
+}
+
+.App .formContainer .register {
+  -ms-grid-column: 12;
+  -ms-grid-column-span: 12;
+  grid-column: 12 / 24;
+  grid-row: span 5;
+}
 /*# sourceMappingURL=App.css.map */

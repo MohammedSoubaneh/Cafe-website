@@ -81,14 +81,16 @@ class Login extends Component {
         }
 
         return (
-            <Form
+            <Form className='outerContainer'
             onSubmit={this.handleLogin}
             ref={(c) => {
               this.form = c;
             }}
           >
+            <div className='innerContainer'>
+            <h1>Login</h1>
             <div className="form-group">
-              <label htmlFor="username">Username</label>
+              <label className='labels' htmlFor="username">Username</label>
               <Input
                 type="text"
                 className="form-control"
@@ -100,7 +102,7 @@ class Login extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="password">Password</label>
+              <label className='labels' htmlFor="password">Password</label>
               <Input
                 type="password"
                 className="form-control"
@@ -112,15 +114,16 @@ class Login extends Component {
             </div>
 
             <div className="form-group">
-              <button
-                className="btn btn-primary btn-block"
+              <div
+                onClick={this.handleLogin}
+                className="button"
                 disabled={this.state.loading}
               >
                 {this.state.loading && (
                   <span className="spinner-border spinner-border-sm"></span>
                 )}
                 <span>Login</span>
-              </button>
+              </div>
             </div>
 
             {message && (
@@ -136,6 +139,7 @@ class Login extends Component {
                 this.checkBtn = c;
               }}
             />
+            </div>
           </Form>
         );
     }
