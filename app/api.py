@@ -277,6 +277,18 @@ def post_products():
 
       return 'Done', 201
 
+@main.route('/delete_products', methods=['POST'])
+def delete_products():
+
+      product_delete = request.get_json()
+
+      delete_product = Products.query.filter_by(id=product_delete['id']).first()
+
+      db.session.delete(delete_product)
+      db.session.commit()
+
+      return 'Done', 201
+
 @main.route('/products')
 def products():
 

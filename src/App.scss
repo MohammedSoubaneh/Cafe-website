@@ -584,4 +584,8 @@
             grid-row: span 5;
         }
     }
+    .dashboardGrid {
+        display: flex;
+        justify-content: space-evenly;
+    }
 }
