@@ -226,7 +226,14 @@ class LogoutAPI(MethodView):
         
         auth_header = request.headers.get('Authorization')
         if auth_header:
-            auth_token = auth_header.split(" ")[1]
+            try:
+                auth_token = auth_header.split(" ")[1]
+            except IndexError:
+                responseObject = {
+                    'status': 'fail',
+                    'message': 'Bearer token malformed.'
+                }
+                return make_response(jsonify(responseObject)), 401
         else:
             auth_token = ''
         if auth_token:
@@ -267,27 +274,61 @@ class LogoutAPI(MethodView):
 
 @main.route('/post_products', methods=['POST'])
 def post_products():
+        auth_header = request.headers.get('Authorization')
+        if auth_header:
+            try:
+                auth_token = auth_header.split(" ")[1]
+            except IndexError:
+                responseObject = {
+                    'status': 'fail',
+                    'message': 'Bearer token malformed.'
+                }
+                return make_response(jsonify(responseObject)), 401
+        else:
+            auth_token = ''
+        if auth_token:
+            resp = User.decode_auth_token(auth_token)
+            if not isinstance(resp, str):
+                user = User.query.filter_by(id=resp).first()
 
-      product_data = request.get_json()
+                product_data = request.get_json()
 
-      new_product = Products(name=product_data['name'], price=product_data['price'], description=product_data['description'], weight=product_data['weight'])
+                new_product = Products(name=product_data['name'], price=product_data['price'], description=product_data['description'], weight=product_data['weight'])
 
-      db.session.add(new_product)
-      db.session.commit()
+                db.session.add(new_product)
+                db.session.commit()
 
-      return 'Done', 201
+                return 'Done', 201
 
-@main.route('/delete_products', methods=['POST'])
+
+@main.route('/delete_products', methods=['DELETE'])
 def delete_products():
 
-      product_delete = request.get_json()
+        auth_header = request.headers.get('Authorization')
+        if auth_header:
+            try:
+                auth_token = auth_header.split(" ")[1]
+            except IndexError:
+                responseObject = {
+                    'status': 'fail',
+                    'message': 'Bearer token malformed.'
+                }
+                return make_response(jsonify(responseObject)), 401
+        else:
+            auth_token = ''
+        if auth_token:
+            resp = User.decode_auth_token(auth_token)
+            if not isinstance(resp, str):
+                user = User.query.filter_by(id=resp).first()
 
-      delete_product = Products.query.filter_by(id=product_delete['id']).first()
+                product_delete = request.get_json()
 
-      db.session.delete(delete_product)
-      db.session.commit()
+                delete_product = Products.query.filter_by(id=product_delete['id']).first()
 
-      return 'Done', 201
+                db.session.delete(delete_product)
+                db.session.commit()
+
+                return 'Done', 201
 
 @main.route('/products')
 def products():

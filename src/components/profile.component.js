@@ -50,6 +50,7 @@ class Profile extends Component {
 
     logOut() {
       UserService.logOut();
+      localStorage.removeItem('user')
       }
 
 
